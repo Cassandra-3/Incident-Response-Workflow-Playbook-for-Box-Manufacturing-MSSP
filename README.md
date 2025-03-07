@@ -102,5 +102,5 @@ The playbook provides a **structured response strategy** to mitigate IoT/endpoin
 - **IoT security is an ongoing challenge** – Regular patching and monitoring are essential.  
 - **Post-incident reviews drive security improvements** – Every incident is a learning opportunity.  
 
-
+![Incident Response Workflow](https://github.com/Cassandra-3/Incident-Response-Workflow-Playbook-for-Box-Manufacturing-MSSP/blob/main/IR%20workflow.png)
 
