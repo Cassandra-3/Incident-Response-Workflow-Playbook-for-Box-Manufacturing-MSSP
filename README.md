@@ -1,106 +1,68 @@
-# Custom Incident Response Workflow & Playbook for Box Manufacturing MSSP  
+# Incident Response Workflow and Playbook for Box Manufacturing
 
-## Project Overview  
-This project focuses on designing a **structured Incident Response Workflow and Playbook** for **Box Manufacturing**, a company specializing in cardboard production. The **playbook** is designed to help Box Manufacturing and its **Managed Security Service Provider (MSSP)** respond effectively to cybersecurity incidents, specifically **IoT/endpoint security compromises**.  
+An individual academic cybersecurity project that translates incident-response guidance into a practical workflow for a fictional manufacturing organization working with an MSSP.
 
-The **goal** of this project is to provide **clear escalation criteria, structured response steps, and predefined communication templates** to minimize the impact of security threats on Box Manufacturing's operations.  
+**Completed:** 2024  
+**Program:** Lighthouse Labs  
+**Project type:** Individual academic project  
+**Scope:** Process and documentation design; not a production deployment
 
-## Objectives  
-- **Develop a structured incident response workflow** for IoT/endpoint security compromises.  
-- **Define escalation criteria** to ensure the right stakeholders are involved at the right time.  
-- **Establish roles and responsibilities** for both Box Manufacturing and its MSSP.  
-- **Provide standardized communication templates** for effective incident reporting.  
-- **Create a step-by-step playbook** to ensure a coordinated response to IoT/endpoint threats.  
+## Project summary
 
-## Frameworks & Methodologies Used  
-- **NIST 800-61 Incident Response Framework**  
-- **MITRE ATT&CK Framework**  
-- **ISO 27001 Security Incident Management Guidelines**  
-- **CISA Cybersecurity Best Practices**  
-- **ITIL Incident Management Best Practices**  
+The project defines how a manufacturing organization could identify, escalate, contain, eradicate, recover from, and learn from a cybersecurity incident. It combines a visual workflow with escalation triggers, stakeholder responsibilities, evidence-handling expectations, and audience-specific communication templates.
 
-## Incident Response Workflow  
-This playbook follows a **five-phase structured workflow**:  
+The scenario used to exercise the design involves a missing Windows 11 business laptop with suspected unauthorized communications. All organizations, incidents, asset details, and contact information are fictional or generalized.
 
-1️ **Detection & Identification**  
-- Monitor network traffic for **unusual behavior** in IoT/endpoint devices.  
-- Use **SIEM logs and alerts** to detect security anomalies.  
-- Verify incidents using **log analysis, forensic tools, and endpoint monitoring**.  
+## Deliverables
 
-2️ **Containment**  
-- Isolate **compromised endpoints** from the network.  
-- Notify **internal IT teams and MSSP** for immediate action.  
-- Implement **network segmentation** to prevent lateral movement.  
+- Five-stage incident-response workflow
+- Escalation criteria for severity, business impact, third parties, critical systems, legal/privacy concerns, failed containment, and unresolved incidents
+- Roles for executive, production, IT, network, database, security-operations, and MSSP stakeholders
+- Technical escalation and executive status-update templates
+- Lost-endpoint response checklist
+- Post-incident review and corrective-action requirements
+- Sanitized public case study with scope and limitations
 
-3️ **Eradication**  
-- Remove **malware, unauthorized access, and backdoors** from affected systems.  
-- Patch vulnerabilities and apply **firmware updates** to IoT devices.  
-- Review **logs, audit trails, and access controls** to ensure no persistence remains.  
+## Framework basis
 
-4️ **Recovery**  
-- Restore systems and IoT devices **to operational status**.  
-- Conduct **security validation tests** before reconnecting to production.  
-- Notify stakeholders and conduct a **post-incident review**.  
+The original 2024 project was informed by:
 
-5️ **Lessons Learned**  
-- Document the **attack timeline, root cause, and security gaps**.  
-- Update **incident response playbooks** based on findings.  
-- Train employees and IT staff on **improved security measures**.  
+- [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) for incident-handling concepts
+- [NIST IR 8228](https://csrc.nist.gov/pubs/ir/8228/final) for IoT cybersecurity and privacy-risk considerations
+- [CISA incident and vulnerability response playbooks](https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf) as supporting guidance
 
-## Incident Escalation Criteria  
-Incidents are escalated based on **severity, business impact, and response complexity**. The following conditions trigger escalation:  
+This repository does **not** claim implementation of MITRE ATT&CK, ISO/IEC 27001, or ITIL. Those frameworks were removed from the earlier README because they were not materially applied in the final project artifact.
 
- **High Severity** – Major security breach affecting production systems.  
- **Unresolved After 48 Hours** – If containment or mitigation is not successful.  
- **Impact on Critical Systems** – If the attack affects financial, database, or manufacturing systems.  
- **Third-Party Vendor Involvement** – If the incident involves external partners.  
- **Operational Disruption or Revenue Loss** – If production is significantly affected.  
- **Legal or Compliance Risks** – If regulatory or data protection policies are violated.  
+> **Current-standard note:** NIST withdrew SP 800-61 Rev. 2 and superseded it with [SP 800-61 Rev. 3](https://csrc.nist.gov/pubs/sp/800/61/r3/final) in April 2025. The documentation preserves the 2024 project basis and points current readers to the newer publication.
 
-## Roles & Responsibilities  
-| **Role** | **Responsibilities** |  
-|----------|----------------------|  
-| **Cat (MSSP Consultant)** | Oversees incident response, coordinates with internal/external teams, ensures playbook compliance. |  
-| **Percy (CEO, Box Manufacturing)** | Makes high-level decisions, receives executive updates, manages business continuity strategy. |  
-| **Misha/Minka (Production Managers)** | Adjusts production schedules, informs teams about disruptions, ensures minimal operational impact. |  
-| **Dusty (Database Specialist)** | Recovers affected databases, ensures data integrity, applies security patches. |  
-| **Lucky (IT Support)** | Assists in detecting, containing, and eradicating security threats. |  
-| **Ned (Network Admin)** | Monitors and manages network security, isolates infected endpoints, restores network stability. |  
-| **Security Operations Center (SOC)** | Monitors and detects threats, provides real-time alerts and forensic analysis. |  
+## Workflow
 
-## Communication Templates  
-To ensure **clear and consistent communication** during incidents, standardized **technical and non-technical templates** are provided.  
+![Incident Response Workflow](IR%20workflow.png)
 
- **Technical Incident Report (for MSSP)**  
-- Provides a **detailed technical breakdown** of the compromise, affected systems, and required actions.  
-- Includes forensic evidence, timeline of events, and recommended next steps.  
+| Stage | Intended outcome |
+|---|---|
+| Detection and identification | Validate the event, establish initial scope, preserve evidence, and assign severity |
+| Containment | Limit damage while balancing evidence, safety, and operational continuity |
+| Eradication | Remove the cause, persistence, and affected access paths |
+| Recovery | Restore services in stages, validate controls, and monitor for recurrence |
+| Lessons learned | Document root cause, impact, improvements, owners, and deadlines |
 
- **Non-Technical Notification (for Clients & Executives)**  
-- Provides **a simplified summary of the incident** for stakeholders without technical expertise.  
-- Focuses on **impact assessment, immediate actions taken, and business continuity measures**.  
+## Skills demonstrated
 
-## Playbook for IoT/Endpoint Security Compromise  
-The playbook provides a **structured response strategy** to mitigate IoT/endpoint threats efficiently.  
+- Incident-response and playbook design
+- Security-incident triage and escalation logic
+- Technical and executive communication
+- Stakeholder and responsibility mapping
+- Evidence-preservation awareness
+- Endpoint and IoT risk considerations
+- Post-incident review and corrective-action planning
+- Cybersecurity documentation grounded in authoritative guidance
 
-### **Key Objectives**  
-✔ **Early Detection:** Identify unauthorized access, abnormal network behavior, or malware infections.  
-✔ **Rapid Containment:** Isolate compromised endpoints, disable unauthorized accounts, and restrict access.  
-✔ **Complete Eradication:** Remove malware, patch vulnerabilities, reset affected devices.  
-✔ **Secure Recovery:** Restore operations securely, verify systems are hardened before reconnecting.  
-✔ **Continuous Improvement:** Conduct post-incident analysis, update security policies, and refine detection strategies.  
+## Repository contents
 
-### **Step-by-Step Response Guide**  
-1️ **Detection:** Monitor **SIEM alerts, network anomalies, and endpoint logs**.  
-2️ **Containment:** Disconnect **infected endpoints, disable compromised accounts, and block malicious traffic**.  
-3️ **Eradication:** Remove **malware, unauthorized access, and vulnerabilities**.  
-4️ **Recovery:** Restore **clean backups, patch systems, and validate security controls**.  
-5️ **Lessons Learned:** Analyze **attack vectors, update security measures, and enhance team training**.  
+- [Detailed case study](docs/incident-response-case-study.md)
+- [Workflow diagram](IR%20workflow.png)
 
-## Key Takeaways  
-- **Proactive incident response is critical** – Early detection and containment reduce damage.  
-- **Clear escalation paths** ensure the right teams are involved at the right time.  
-- **IoT security is an ongoing challenge** – Regular patching and monitoring are essential.  
-- **Post-incident reviews drive security improvements** – Every incident is a learning opportunity.  
+## Scope and limitations
 
-![Incident Response Workflow](https://github.com/Cassandra-3/Incident-Response-Workflow-Playbook-for-Box-Manufacturing-MSSP/blob/main/IR%20workflow.png)
-
+This was a design exercise, not a live incident response or production implementation. The workflow was not deployed in a SOC, MSSP, or client environment, and the project does not make claims of formal framework compliance, legal sufficiency, or control effectiveness. Public documentation has been sanitized to remove fictional contact details, duplicated content, and unsupported references from the original classroom report.
